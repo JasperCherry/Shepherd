@@ -85,7 +85,7 @@ void level3() {
   }
   if (time>100&&time<400) {
     textSize(50);
-    fill(0);
+    fill(255);
     text("Press 'R' to see", 250, 150);
     text("the range of the dogs", 250, 200);
   }
@@ -106,9 +106,9 @@ void level2() {
   }
   if (time>100&&time<400) {
     textSize(50);
-    fill(0);
-    text("To use patroling mode press ", 10, 50);
-    text("'q' when selecting destination", 10, 100);
+    fill(255);
+    text("To use patroling mode press ", 100, 350);
+    text("'Q' when selecting destination", 100, 400);
   }
 }
 
@@ -126,17 +126,17 @@ void level1() {
   }
   if (time>100&&time<400) {
     textSize(50);
-    fill(0);
+    fill(255);
     text("firstly left click your dog", 200, 400);
   }
   if (time>400&&time<700) {
     textSize(50);
-    fill(0);
+    fill(255);
     text("then right click its destination", 200, 400);
   }
   if (time>700&&time<1000) {
     textSize(50);
-    fill(0);
+    fill(255);
     text("try to chase sheeps into", 200, 400);
     text("the marked field", 200, 450);
   }

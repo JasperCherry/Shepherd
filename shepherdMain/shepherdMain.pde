@@ -26,6 +26,7 @@
  Control dogs with mouse and chase the sheeps to marked square on map
  Use left click to choose a dog, right click to select its destination.
  press R to display range of dogs
+ press Q to use patrol mode
  press O to skip level
  
  Game features:
