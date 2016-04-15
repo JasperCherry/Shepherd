@@ -11,9 +11,13 @@ class Dog {
   float targetX;
   float targetY;
   boolean exist;
+  boolean patrolMode;
+  float pTargetX;
+  float pTargetY;
 
   Dog(float tempXpos, float tempYpos, float tempSpeed, int tempId) { 
 
+    patrolMode=false;
     display=true;
     xpos = tempXpos;
     ypos = tempYpos;
@@ -168,9 +172,17 @@ class Dog {
         swaper=id;
         targetX=xpos;
         targetY=ypos;
+        patrolMode=false;
       } else if (swaper==id && (mouseButton == RIGHT) ) {
         targetX=mouseX;
         targetY=mouseY;
+        if ((key == 'Q' || key == 'q') && keyPressed) {
+          patrolMode=true;
+          pTargetX=xpos;
+          pTargetY=ypos;
+        } else {
+          patrolMode=false;
+        }
       } else if (swaper==id && mouseButton == LEFT) {
         swaper=0;
       }
@@ -202,6 +214,13 @@ class Dog {
 
     ///// movement and last position
     if (exist) {
+      // patroling mode
+      if (patrolMode&&targetX==xpos&&targetY==ypos) {
+        targetX=pTargetX;
+        targetY=pTargetY;
+        pTargetX=xpos;
+        pTargetY=ypos;
+      }
       if (xpos<targetX) {
         xpos=xpos+speed; 
         lastMoveX=xpos-1;

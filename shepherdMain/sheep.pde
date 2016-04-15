@@ -99,7 +99,6 @@ class Sheep {
     // then object checks if its target is closer then 150px to dog or wolf and changes it if it is
     // and escapes
 
-
     if (hit==0) {
       for (int d=0; d<dogs.length; d++) {
         if (dist(xpos, ypos, dogs[d].xpos, dogs[d].ypos)<threatPos) {

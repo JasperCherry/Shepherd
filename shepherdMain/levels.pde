@@ -18,7 +18,6 @@ void level7() {
   gameBackground();
   safePlace7();
   displayAllObjects();
-  rain.display();
   check7();
 
   if (time<100) {
@@ -33,7 +32,6 @@ void level6() {
   gameBackground();
   safePlace6();
   displayAllObjects();
-  rain.display();
   check6();
 
   if (time<100) {
@@ -48,7 +46,6 @@ void level5() {
   gameBackground();
   safePlace5();
   displayAllObjects();
-  rain.display();
   check5();
 
   if (time<100) {
@@ -64,7 +61,6 @@ void level4() {
   gameBackground();
   safePlace4();
   displayAllObjects();
-  rain.display();
   check4();
 
   if (time<100) {
@@ -80,7 +76,6 @@ void level3() {
   gameBackground();
   safePlace3();
   displayAllObjects();
-  rain.display();
   check3();
 
   if (time<100) {
@@ -102,7 +97,6 @@ void level2() {
   gameBackground();
   safePlace2();
   displayAllObjects();
-  rain.display();
   check2();
 
   if (time<100) {
@@ -113,8 +107,8 @@ void level2() {
   if (time>100&&time<400) {
     textSize(50);
     fill(0);
-    text("Dogs are more efficient ", 150, 100);
-    text("when working in group", 150, 150);
+    text("To use patroling mode press ", 10, 50);
+    text("'q' when selecting destination", 10, 100);
   }
 }
 
@@ -123,7 +117,6 @@ void level1() {
   gameBackground();
   safePlace1();
   displayAllObjects();
-  rain.display();
   check1();
 
   if (time<100) {

@@ -9,6 +9,7 @@ void playMusic() {
   }
 }
 
+
 void rainCheck() {
   XML root=loadXML("http://www.yr.no/place/United_Kingdom/Scotland/Edinburgh/forecast.xml");
   XML item1=root.getChild("forecast");                     
@@ -26,22 +27,21 @@ void dogControl() {
 
 
 void displayAllObjects() {//displays dogs, wolfs, bird, sheeps, trees, lakes
-
   // water
   for (int i=0; i<waterArr.length; i++) {
     waterArr[i].display();
   }
-
-  // dogs, wolfs, sheeps, bird
+  // dogs, wolfs, sheeps
   moveAllMovingObjects();
   displayAllMovingObjects();
-
   // trees
   for (int i=0; i<treeArr.length; i++) {
     treeArr[i].display();
   }
+  // bird
   bird1.drive();
   bird1.display();
+  rain.display();
   dogControl();// has to be last one to make the circle always visible
 }
 
@@ -83,6 +83,7 @@ void createAllObjects() {//creates dogs, wolfs, bird, sheeps, trees, lakes
   dogs[0] = new Dog(100, 180, 1, objID); 
   objID++;
 }
+
 
 void moveAllMovingObjects() { // except the bird
   // dogs
@@ -174,10 +175,12 @@ void displayAllMovingObjects() { // except the bird
   }
 }/////// end of function display all moving objects
 
+
 // time based on draw() in the game
 void timer() {
   time++;
 }
+
 
 // press to pass level
 void keyPressed() {
@@ -185,6 +188,7 @@ void keyPressed() {
     finishLevel=true;
   }
 }
+
 
 void sheepsStart() {
 
@@ -202,7 +206,51 @@ void sheepsStart() {
   }
 }// end of sheepStart
 
+
 void gameBackground() {
   imageMode(CORNER);
   image(grass, 0, 0);
 }
+
+
+void loadFiles() {
+  minim = new Minim(this);
+  // this loads songs
+  starterSong = minim.loadFile("song1.mp3");
+  bark1 = minim.loadFile("bark1.mp3");
+  bark2 = minim.loadFile("bark2.mp3");
+  sheep1 = minim.loadFile("sheep1.mp3");
+  for (int i=1; i<5; i++) {
+    gameSongs[i-1] = minim.loadFile("game"+i+".mp3");
+  } 
+  // loads font used in the game
+  font = loadFont("Papyrus-Regular-100.vlw");
+  // sheep
+  for (int i=1; i<9; i++) {
+    sheep[i-1] = loadImage("s"+i+".png");
+  }
+  // dog
+  for (int i=1; i<11; i++) {
+    dog[i-1] = loadImage("dog"+i+".png");
+  }
+  // wolf
+  for (int i=1; i<11; i++) {
+    wolf[i-1] = loadImage("wolf"+i+".png");
+  }
+  // bird
+  for (int i=1; i<7; i++) {
+    bird[i-1] = loadImage("bird"+i+".png");
+  }
+  // water
+  for (int i=1; i<7; i++) {
+    water[i-1] = loadImage("w"+i+".png");
+  }
+  // trees
+  for (int i=1; i<13; i++) {
+    trees[i-1] = loadImage("t"+i+".png");
+  }
+
+  grass = loadImage("grass.jpg");
+  starter = loadImage("picShep.jpg");
+  finisher = loadImage("picShep2.jpg");
+}// end of load pic function

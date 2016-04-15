@@ -18,7 +18,7 @@ class Tree {
 
     // remove comment to see borders
     /*
-strokeWeight(2);
+     strokeWeight(2);
      fill(255);
      stroke(0);
      ellipse(xpos,ypos,20,20);
