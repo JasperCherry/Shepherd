@@ -55,7 +55,7 @@ class Dog {
     }
 
     for (int i=0; i<20; i++) {
-      stroke(0, 0, 0);
+      noStroke();
       strokeWeight(0);
 
       fill(0, footprintsT[i]);
