@@ -42,6 +42,8 @@ class Sheep {
     }
 
     imageMode(CENTER);
+    //animation
+
     //  line(xpos,ypos,xpos,ypos+15); // check where it stands
     if (targetX<xpos) {
       if (movePhase<=6) {

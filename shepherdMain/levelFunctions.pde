@@ -153,6 +153,15 @@ void displayAllMovingObjects() { // except the bird
 
   check=sort(check);
 
+  // displaying footprints
+  for (int x=0; x<dogs.length; x++) {
+    dogs[x].showFootprints();
+  }
+  for (int x=0; x<wolfs.length; x++) {
+    wolfs[x].showFootprints();
+  }
+
+  // display pictures
   for (int i=0; i<allNumber; i++) {
     for (int x=0; x<dogs.length; x++) {
       if (check[i]==dogs[x].ypos&&dogs[x].display) {

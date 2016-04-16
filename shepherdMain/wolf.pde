@@ -11,6 +11,14 @@ class Wolf {
   float targetY;
   boolean exist;
 
+  // footprints variables
+
+  float[] footprintsX = new float[20];
+  float[] footprintsY = new float[20];
+  float[] footprintsT = new float[20];
+  int stamp=0;
+  int currentStamp=0;
+
   Wolf(float tempXpos, float tempYpos, float tempSpeed) { 
 
     display=true;
@@ -22,6 +30,35 @@ class Wolf {
     targetX=xpos;
     targetY=ypos;
     exist=false;
+  }
+
+  void showFootprints() {
+    // footprints
+    stamp++;
+    if (stamp%10==0) {
+      stamp=0;
+      if (targetX!=xpos||targetY!=ypos) { // if object is moving
+        footprintsX[currentStamp]=xpos;
+        footprintsY[currentStamp]=ypos;
+        footprintsT[currentStamp]=200;
+        currentStamp++;
+      }
+      if (currentStamp==20) {
+        currentStamp=0;
+      }
+    }
+
+    for (int i=0; i<20; i++) {
+      stroke(0, 0, 0);
+      strokeWeight(0);
+
+      fill(0, footprintsT[i]);
+      if (stamp==0&&footprintsT[i]>0) {
+        footprintsT[i]-=10;
+      }
+      ellipseMode(CENTER);
+      ellipse(footprintsX[i], footprintsY[i]+15, 6, 3);
+    }
   }
 
   void display() {
