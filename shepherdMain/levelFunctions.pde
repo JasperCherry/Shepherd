@@ -160,6 +160,9 @@ void displayAllMovingObjects() { // except the bird
   for (int x=0; x<wolfs.length; x++) {
     wolfs[x].showFootprints();
   }
+  for (int x=0; x<sheeps.length; x++) {
+    sheeps[x].showFootprints();
+  }
 
   // display pictures
   for (int i=0; i<allNumber; i++) {

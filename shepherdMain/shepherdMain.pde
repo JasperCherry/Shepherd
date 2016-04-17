@@ -33,6 +33,8 @@
  
  2D game with sound effects
  
+ Great attention to details
+ 
  Weather synchronized by XML file with actual weather in Edinburgh (rain)
  
  Reliable AI of game objects

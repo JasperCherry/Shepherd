@@ -171,16 +171,16 @@ class Dog {
 
   void dogCircle() {
     ////// controling the dog
-    if (swaper==id) {
+    if (swaper==id && !((key == 'R' || key == 'r') && keyPressed)) {
       // draw range circle
-      stroke(0, 0, 0);
+      stroke(0, 0, 0, 100);
       fill(0, 0);
       strokeWeight(2);
       ellipse(xpos, ypos, 250, 250);
     }
 
     if ((key == 'R' || key == 'r') && keyPressed) {
-        stroke(0, 0, 0);
+        stroke(0, 0, 0, 100);
         fill(0, 0);
         strokeWeight(2);
         ellipse(xpos, ypos, 250, 250);

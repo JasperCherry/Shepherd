@@ -18,6 +18,14 @@ class Sheep {
   // it's avoiding the bug of getting stuck
   int hit=0;
 
+  // footprints variables
+
+  float[] footprintsX = new float[20];
+  float[] footprintsY = new float[20];
+  float[] footprintsT = new float[20];
+  int stamp=0;
+  int currentStamp=0;
+
   Sheep(float tempTargetX, float tempTargetY, float tempXpos, float tempYpos, float tempSpeed) { 
 
     exist=false;
@@ -32,6 +40,35 @@ class Sheep {
     lastMoveX = xpos;
     lastMoveY = ypos;
     speed = tempSpeed;
+  }
+
+  void showFootprints() {
+    // footprints
+    stamp++;
+    if (stamp%10==0) {
+      stamp=0;
+      if (targetX!=xpos||targetY!=ypos) { // if object is moving
+        footprintsX[currentStamp]=xpos;
+        footprintsY[currentStamp]=ypos;
+        footprintsT[currentStamp]=200;
+        currentStamp++;
+      }
+      if (currentStamp==20) {
+        currentStamp=0;
+      }
+    }
+
+    for (int i=0; i<20; i++) {
+      noStroke();
+      strokeWeight(0);
+
+      fill(0, footprintsT[i]);
+      if (stamp==0&&footprintsT[i]>0) {
+        footprintsT[i]-=10;
+      }
+      ellipseMode(CENTER);
+      ellipse(footprintsX[i], footprintsY[i]+16, 6, 3);
+    }
   }
 
   void display() {
