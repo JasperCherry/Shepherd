@@ -23,7 +23,7 @@
  freesfx.co.uk
  
  Manual:
- Control dogs with mouse and chase the sheeps to marked square on map
+ Control dogs with mouse and chase the sheeps to marked square on map.
  Use left click to choose a dog, right click to select its destination.
  press R to display range of dogs
  press Q to use patrol mode
@@ -42,13 +42,14 @@
  Easy to add new levels
  
  */
+
 import ddf.minim.*;
 Minim minim;
 AudioPlayer starterSong;
 AudioPlayer bark1;
 AudioPlayer bark2;
 AudioPlayer sheep1;
-AudioPlayer[] gameSongs = new AudioPlayer[4];
+AudioPlayer[] gameSongs = new AudioPlayer[5];
 
 int currentSong=1;
 

@@ -2,7 +2,7 @@ void playMusic() {
   if (!gameSongs[currentSong].isPlaying()) {
     gameSongs[currentSong].rewind();
     currentSong++;
-    if (currentSong==4) {
+    if (currentSong==5) {
       currentSong=0;
     }
     gameSongs[currentSong].play();
@@ -232,7 +232,7 @@ void loadFiles() {
   bark1 = minim.loadFile("bark1.mp3");
   bark2 = minim.loadFile("bark2.mp3");
   sheep1 = minim.loadFile("sheep1.mp3");
-  for (int i=1; i<5; i++) {
+  for (int i=1; i<6; i++) {
     gameSongs[i-1] = minim.loadFile("game"+i+".mp3");
   } 
   // loads font used in the game

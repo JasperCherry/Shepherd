@@ -50,8 +50,6 @@ class Wolf {
 
     for (int i=0; i<20; i++) {
       noStroke();
-      strokeWeight(0);
-
       fill(0, footprintsT[i]);
       if (stamp==0&&footprintsT[i]>0) {
         footprintsT[i]-=10;
