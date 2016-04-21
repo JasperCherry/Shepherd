@@ -19,6 +19,7 @@ void rainCheck() {
   temp1=item4.getString("name");
 }
 
+
 void dogControl() {
   for (int i=0; i<dogs.length; i++) {
     dogs[i].dogCircle();
